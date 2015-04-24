@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1150090121
+    locked: 0
+  - name: Decales
+    uniqueID: 3425023811
+    locked: 0
+  - name: Shadows
+    uniqueID: 948464567
+    locked: 0
+  - name: Sprites
+    uniqueID: 1978914053
+    locked: 0
+  - name: UI
+    uniqueID: 963487257
+    locked: 0
