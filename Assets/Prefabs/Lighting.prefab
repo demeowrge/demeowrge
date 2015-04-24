@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400644}
   - 212: {fileID: 21208814}
   - 95: {fileID: 9528856}
+  - 114: {fileID: 11446218}
   m_Layer: 0
   m_Name: Lighting
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.90518188, y: .798749924, z: 0}
+  m_LocalPosition: {x: -4.11000013, y: 1.95000005, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,6 +47,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11446218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e5a3ae1b9768c4693425e21446e4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21208814
 SpriteRenderer:
   m_ObjectHideFlags: 1
