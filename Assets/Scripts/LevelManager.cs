@@ -1,32 +1,60 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
+﻿using UnityEngine;
 
-public static class LevelManager {
+public static class LevelManager
+{
+    private const string LevelNameTemplate = "Test Level";
+    private static int savedLevel;
+    private static int currentLevel;
+
+    public static bool HaveSavedLevel
+    {
+        get { return savedLevel != 0; }
+    }
+
+    private static string GetLevelName(int index)
+    {
+        return LevelNameTemplate + " " + index;
+    }
+
+    private static void LoadLevel(int index)
+    {
+        Application.LoadLevel(GetLevelName(index));
+    }
 
     public static void NextLevel()
     {
-        throw new NotImplementedException();    
+        LoadLevel(currentLevel++);
     }
+
     public static void RestartLevel()
     {
-        throw new NotImplementedException();
+        LoadLevel(currentLevel);
     }
+
     public static void Save()
     {
-        throw new NotImplementedException();
+        savedLevel = currentLevel;
     }
+
     public static void Load()
     {
-        throw new NotImplementedException();
+        if (savedLevel > 0)
+            LoadLevel(savedLevel);
     }
+
     public static void NewGame()
     {
-        Application.LoadLevel("Test Level 1");
+        currentLevel = 1;
+        LoadLevel(currentLevel);
     }
+
+    public static void MainMenu()
+    {
+        Application.LoadLevel("MainMenu");
+    }
+
     public static void Exit()
     {
-        Environment.Exit(0);
+        Application.Quit();
     }
 }
