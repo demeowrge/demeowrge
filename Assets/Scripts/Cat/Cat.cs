@@ -31,6 +31,11 @@ public class Cat : MonoBehaviour
         }
     }
 
+    public void StopAction()
+    {
+        StopCoroutine(currentAction);
+    }
+
     public void Idle(float time)
     {
         currentAction = StartCoroutine(idle(time));
@@ -43,7 +48,16 @@ public class Cat : MonoBehaviour
 
     public void Death()
     {
-        // pass
+        CatAnimationController animationController = GetComponent<CatAnimationController>();
+        animationController.Death();
+    }
+
+    private IEnumerator idle()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+        }
     }
 
     private IEnumerator idle(float time)
