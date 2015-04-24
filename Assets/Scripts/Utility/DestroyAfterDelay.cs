@@ -5,8 +5,9 @@ public class DestroyAfterDelay : MonoBehaviour
 {
     public float lifetime;
 
-	void Awake () {
+    void Awake()
+    {
         Destroy(gameObject, lifetime);
-	}
-	
+    }
+
 }

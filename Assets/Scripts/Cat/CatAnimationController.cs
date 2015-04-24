@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CatAnimationController : MonoBehaviour {
+public class CatAnimationController : MonoBehaviour
+{
     public float idleTimeToSleep;
     private Vector3 lastPosition;
     private float idleTime;
@@ -15,7 +16,8 @@ public class CatAnimationController : MonoBehaviour {
         wasMoving = false;
     }
 
-    void Update () {
+    void Update()
+    {
         //var vect = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         //transform.position += vect * 1f * Time.deltaTime;
 
@@ -47,7 +49,7 @@ public class CatAnimationController : MonoBehaviour {
         }
 
         lastPosition = transform.position;
-	}
+    }
 
     public void Death()
     {

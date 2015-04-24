@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-using Utility;
 using Random = UnityEngine.Random;
 
 public class Cat : MonoBehaviour
@@ -20,7 +18,7 @@ public class Cat : MonoBehaviour
     }
 
     private void pickAction()
-    {   
+    {
         float val = Random.value;
 
         if (val < 0.7f)
@@ -29,7 +27,7 @@ public class Cat : MonoBehaviour
         }
         else
         {
-            Move(transform.position + (Vector3) Random.insideUnitCircle * 2.25f, speedRange.random());
+            Move(transform.position + (Vector3)Random.insideUnitCircle * 2.25f, speedRange.random());
         }
     }
 

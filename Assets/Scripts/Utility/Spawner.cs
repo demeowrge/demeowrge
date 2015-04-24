@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Field : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     public Transform prefabFieldSprite;
     public int fieldWidth;
@@ -15,7 +15,6 @@ public class Field : MonoBehaviour
     void Start()
     {
         Transform newTile;
-
         float TileWidth = pxTileWidth * 0.01f; // pixels to space
         float TileHeight = pxTileHeight * 0.01f;
 
@@ -26,11 +25,14 @@ public class Field : MonoBehaviour
                 if (j != ditchYPosition)
                 {
                     newTile = Instantiate(prefabFieldSprite, new Vector3(transform.position.x + i * TileWidth,
-                        transform.position.y + j * TileHeight, 0), transform.rotation) as Transform;
+                                                                         transform.position.y + j * TileHeight, 0), transform.rotation) as Transform;
+                    newTile.gameObject.GetComponent<SpriteRenderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+
                     newTile.parent = transform;
                 }
             }
         }
-    }
 
+
+    }
 }
