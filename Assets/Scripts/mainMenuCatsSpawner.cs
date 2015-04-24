@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenuCatsSpawner : MonoBehaviour {
+public class mainMenuCatsSpawner : MonoBehaviour {
 	public int catsPauseChance;
     public float spawnPause;
     private float timeFromLastSpawn;
