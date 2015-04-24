@@ -22,3 +22,5 @@ Assets/UnityVS*
 sysinfo.txt
 *.psd
 *.psd.meta
+
+!.keep
