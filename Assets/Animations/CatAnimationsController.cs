@@ -16,8 +16,8 @@ public class CatAnimationsController : MonoBehaviour {
     }
 
     void Update () {
-        var vect = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        transform.position += vect * 1f * Time.deltaTime;
+        //var vect = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        //transform.position += vect * 1f * Time.deltaTime;
 
         var positionDelta = transform.position - lastPosition;
 
