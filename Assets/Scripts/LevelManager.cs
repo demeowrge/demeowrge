@@ -23,7 +23,7 @@ public static class LevelManager {
     }
     public static void NewGame()
     {
-        throw new NotImplementedException();
+        Application.LoadLevel("Test Level 1");
     }
     public static void Exit()
     {
