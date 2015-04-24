@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/Dia6lo-dev/Test Level 1.unity
+    path: Assets/Scenes/Levels/Test Level 1.unity
   - enabled: 1
-    path: Assets/Scenes/Dia6lo-dev/Test Level 2.unity
+    path: Assets/Scenes/Levels/Test Level 2.unity
   - enabled: 1
-    path: Assets/Scenes/Dia6lo-dev/Test Level 3.unity
+    path: Assets/Scenes/Levels/Test Level 3.unity
