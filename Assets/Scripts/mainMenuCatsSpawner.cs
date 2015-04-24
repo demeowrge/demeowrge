@@ -3,12 +3,26 @@ using System.Collections;
 
 public class mainMenuCatsSpawner : MonoBehaviour {
 	public int catsPauseChance;
+    public float spawnPause;
+    private float timeFromLastSpawn;
+
     public GameObject menuCatsPrefab;
-	
-	void Update () {
-        if (Random.Range(0, catsPauseChance) == 0)
-        {
-              Instantiate(menuCatsPrefab, transform.position, transform.rotation);
-        };
+
+    void Awake()
+    {
+        timeFromLastSpawn = spawnPause;
+    }
+
+	void Update ()
+	{
+        timeFromLastSpawn = timeFromLastSpawn + Time.deltaTime;
+        if (timeFromLastSpawn > spawnPause)
+	    {
+            timeFromLastSpawn = 0;
+            if (Random.Range(0, catsPauseChance) == 0)
+            {
+                Instantiate(menuCatsPrefab, transform.position, transform.rotation);
+            }
+	    } 
 	}
 }
