@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CatAnimationsController : MonoBehaviour {
+public class CatAnimationController : MonoBehaviour {
     public float idleTimeToSleep;
     private Vector3 lastPosition;
     private float idleTime;
