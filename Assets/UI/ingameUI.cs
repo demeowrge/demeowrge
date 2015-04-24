@@ -4,7 +4,7 @@ using System.Collections;
 public class ingameUI : MonoBehaviour {
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
     }
 
     public void bnProphetClick()
