@@ -23,13 +23,13 @@ public class Cat : MonoBehaviour
     {   
         float val = Random.value;
 
-        if (val - 0.5 < Mathf.Epsilon)
+        if (val < 0.7f)
         {
             Idle(idleRange.random());
         }
         else
         {
-            Move(transform.position + (Vector3) Random.insideUnitCircle, speedRange.random());
+            Move(transform.position + (Vector3) Random.insideUnitCircle * 2.25f, speedRange.random());
         }
     }
 
