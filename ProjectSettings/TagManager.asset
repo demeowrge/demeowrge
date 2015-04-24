@@ -53,6 +53,9 @@ TagManager:
   - name: Sprites
     uniqueID: 1978914053
     locked: 0
+  - name: Spells
+    uniqueID: 246167289
+    locked: 0
   - name: UI
     uniqueID: 963487257
     locked: 0
