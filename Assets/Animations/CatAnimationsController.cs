@@ -25,7 +25,8 @@ public class CatAnimationsController : MonoBehaviour {
         {
             if (wasMoving)
             {
-                animator.SetTrigger("Stop");
+                animator.SetBool("isStay", true);
+                animator.SetFloat("HorisontalSpeed", 0);
                 wasMoving = false;
             }
             idleTime = idleTime + Time.deltaTime;
@@ -36,6 +37,7 @@ public class CatAnimationsController : MonoBehaviour {
         {
             idleTime = 0;
             animator.SetBool("isSleep", false);
+            animator.SetBool("isStay", false);
             wasMoving = true;
 
             if (positionDelta.x == 0)
