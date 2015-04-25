@@ -15,6 +15,46 @@ public class CameraController : MonoBehaviour
     protected FloatRange CameraInnerHeightBorders;
     protected FloatRange CameraInnerWidthBorders;
 
+    void Start()
+    {
+        ScreenHalfHeight = Camera.main.orthographicSize;
+        ScreenHalfWidth = ScreenHalfHeight * Camera.main.aspect;
+        ScreenHeight = ScreenHalfHeight * 2f;
+        ScreenWidth = ScreenHalfWidth * 2f;
+        CameraInnerHeightBorders = new FloatRange(ScreenHalfHeight, LevelGenerator.LevelPxHeight - ScreenHalfHeight);
+        CameraInnerWidthBorders = new FloatRange(ScreenHalfWidth, LevelGenerator.LevelPxWidth - ScreenHalfWidth);
+
+        Vector3 position = transform.position;
+
+        if (CameraInnerHeightBorders.min > CameraInnerHeightBorders.max)
+        {
+            position.y = LevelGenerator.LevelPxHeight / 2f;
+        }
+        else if (position.y < CameraInnerHeightBorders.min)
+        {
+            position.y = CameraInnerHeightBorders.min;
+        }
+        else if (position.y > CameraInnerHeightBorders.max)
+        {
+            position.y = CameraInnerHeightBorders.max;
+        }
+
+        if (CameraInnerWidthBorders.min > CameraInnerWidthBorders.max)
+        {
+            position.x = LevelGenerator.LevelPxWidth / 2f;
+        }
+        else if (position.x < CameraInnerWidthBorders.min)
+        {
+            position.x = CameraInnerWidthBorders.min;
+        }
+        else if (position.x > CameraInnerWidthBorders.max)
+        {
+            position.x = CameraInnerWidthBorders.max;
+        }
+
+        transform.position = position;
+    }
+
     void Update()
     {
         ScreenHalfHeight = Camera.main.orthographicSize;
