@@ -4,7 +4,7 @@ using System.Collections;
 public class ingameUI : MonoBehaviour {
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
     }
 
     public void bnProphetClick()
@@ -14,7 +14,7 @@ public class ingameUI : MonoBehaviour {
 
     public void bnLightingClick()
     {
-        Debug.Log("bnLighting_Clicked");
+        Instantiate(SpellManager.LightningSpell);
     }
 
     public void bnMenuClick()
