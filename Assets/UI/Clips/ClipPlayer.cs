@@ -15,12 +15,13 @@ public class ClipPlayer : MonoBehaviour
     void NextSlide()
     {
         SlideNumber++;
-        if (SlideNumber >= slides.GetLength(0))
+        if (SlideNumber == slides.GetLength(0))
+        {
             if (!isLastClip)
                 LevelManager.NextLevel();
             else
                 LevelManager.MainMenu();
-
+        }
         for (int i = 0; i < slides.GetLength(0); i++)
             slides[i].SetActive(i == SlideNumber);
     }
