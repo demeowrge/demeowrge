@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class VictoryCondition : MonoBehaviour {
+public abstract class VictoryCondition : MonoBehaviour
+{
 
+    protected abstract bool Condition { get;}
+
+    protected void Update () {
+	    if (Condition)
+            OnVictory();
+
+	}
     
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    protected void OnVictory()
+    {
+        LevelManager.NextClip();
+    }
 }
