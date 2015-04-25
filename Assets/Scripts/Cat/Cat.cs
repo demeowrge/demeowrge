@@ -43,14 +43,14 @@ public class Cat : MonoBehaviour
 
         // TODO: Fix. Dis is HUEVO. Fix.
 
-        if (destination.x < 0f)
-            destination.x = 0f;
+        if (destination.x < 0.2f)
+            destination.x = 0.2f;
 
         if (destination.x > LevelGenerator.LevelPxWidth)
             destination.x = LevelGenerator.LevelPxWidth;
 
-        if (destination.y < 0f)
-            destination.y = 0f;
+        if (destination.y < 0.2f)
+            destination.y = 0.2f;
 
         if (destination.y > LevelGenerator.LevelPxHeight)
             destination.y = LevelGenerator.LevelPxHeight;

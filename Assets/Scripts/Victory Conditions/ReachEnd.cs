@@ -4,7 +4,7 @@ using System.Collections;
 public class ReachEnd : VictoryCondition
 {
     public int NeededCats;
-    public int FinishedCats { get; private set; }
+    public int FinishedCats; //{ get; private set; }
     public GameObject FinishZone;
 
     void Start()

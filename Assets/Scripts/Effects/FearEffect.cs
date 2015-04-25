@@ -9,7 +9,7 @@ public class FearEffect : AbsCatEffect
     {
         // TODO: Fix. Dis is bugged. Fix.
         cat.Move(
-            (cat.transform.position - transform.position) * fearRange.random(),
+            cat.transform.position + (cat.transform.position - transform.position) * fearRange.random(),
             cat.SpeedRange.max * 2
         );
     }
