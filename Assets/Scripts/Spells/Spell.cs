@@ -4,7 +4,7 @@ using System.Collections;
 public class Spell : MonoBehaviour
 {
     public GameObject PrecastEffect;
-    public GameObject SpellEffect;
+    public GameObject[] SpellEffects;
 
     public void Start()
     {
@@ -16,7 +16,8 @@ public class Spell : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(SpellEffect, gameObject.transform.position, Quaternion.identity);
+            foreach (var effect in SpellEffects)
+                Instantiate(effect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         if (Input.GetMouseButtonDown(1))
