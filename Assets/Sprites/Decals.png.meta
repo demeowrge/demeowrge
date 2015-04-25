@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: f5a6c744f1837834ab8de4465fd52327
+timeCreated: 1429973646
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Decals_0
+    21300002: Decals_1
+    21300004: Decals_2
+    21300006: Decals_3
+    21300008: Decals_4
+    21300010: Decals_5
+    21300012: Decals_6
+    21300014: Decals_7
+    21300016: Decals_8
+    21300018: Decals_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Decals_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 420
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 421
+        width: 20
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 414
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 426
+        width: 57
+        height: 39
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 367
+        width: 59
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 337
+        width: 70
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 233
+        width: 46
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_7
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 296
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_8
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 243
+        width: 67
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Decals_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 58
+        width: 23
+        height: 331
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
