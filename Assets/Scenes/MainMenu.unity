@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508da07f1a2c6cd4c8056e27884246b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadePrefab: {fileID: 193506, guid: 49d106f3f88179d49977771418abfce8, type: 2}
+  FadePrefab: {fileID: 119244, guid: 49d106f3f88179d49977771418abfce8, type: 2}
 --- !u!1 &1759557033
 GameObject:
   m_ObjectHideFlags: 0
