@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class CatAnimationController : MonoBehaviour
 {
@@ -7,6 +6,9 @@ public class CatAnimationController : MonoBehaviour
     private Vector3 lastPosition;
     private float idleTime;
     private bool wasMoving;
+
+    private Transform Hat;
+
     Animator animator;
 
     void Start()
@@ -18,15 +20,15 @@ public class CatAnimationController : MonoBehaviour
 
     void Update()
     {
-        //var vect = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        //transform.position += vect * 1f * Time.deltaTime;
-
         var positionDelta = transform.position - lastPosition;
 
         if (positionDelta == Vector3.zero)
         {
             if (wasMoving)
             {
+                if (Hat != null)
+                    Hat.localRotation = transform.rotation;
+
                 animator.SetBool("isStay", true);
                 animator.SetFloat("HorisontalSpeed", 0);
                 wasMoving = false;
@@ -37,10 +39,17 @@ public class CatAnimationController : MonoBehaviour
         }
         else
         {
-            idleTime = 0;
-            animator.SetBool("isSleep", false);
-            animator.SetBool("isStay", false);
-            wasMoving = true;
+            if (!wasMoving)
+            {
+                idleTime = 0;
+                animator.SetBool("isSleep", false);
+                animator.SetBool("isStay", false);
+                wasMoving = true;
+
+                Hat = transform.FindChild("FezFez(Clone)");
+                if ((Hat != null) && (positionDelta.x > 0))
+                    Hat.Rotate(0, 180, 0);
+            }
 
             if (positionDelta.x == 0)
                 animator.SetFloat("HorisontalSpeed", -1);
@@ -54,5 +63,14 @@ public class CatAnimationController : MonoBehaviour
     public void Death()
     {
         animator.SetTrigger("Death");
+
+        if (Hat != null)
+            Destroy(Hat.gameObject);
+        else
+        {
+            Hat = transform.FindChild("FezFez(Clone)");
+            if (Hat != null)
+                Destroy(Hat.gameObject);
+        }
     }
 }
