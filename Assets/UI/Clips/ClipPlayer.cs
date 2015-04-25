@@ -1,15 +1,29 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class ClipPlayer : MonoBehaviour {
+public class ClipPlayer : MonoBehaviour
+{
+    public GameObject[] slides;
+    private int SlideNumber;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    SlideNumber = -1;
+        NextSlide();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+    void NextSlide()
+    {
+        SlideNumber++;
+        if (SlideNumber >= slides.GetLength(0))
+            LevelManager.NextLevel();
+
+        for (int i = 0; i < slides.GetLength(0); i++)
+            slides[i].SetActive(i == SlideNumber);
+    }
+
+	void Update ()
+	{
+	    if (Input.GetMouseButtonDown(0))
+	        NextSlide();
 	}
 }
