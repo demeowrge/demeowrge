@@ -28,7 +28,12 @@ public static class LevelManager
     private static void LoadLevel(int index)
     {
         FadeManager.Fade();
-        while (FadeManager.Fading) { }
+        WaitForFadeLevel(index);
+    }
+
+    private static IEnumerator WaitForFadeLevel(int index)
+    {
+        while (FadeManager.Fading) { yield return new WaitForEndOfFrame(); }
         Application.LoadLevel(GetLevelName(index));
         FadeManager.Unfade();
     }
@@ -36,7 +41,12 @@ public static class LevelManager
     private static void LoadClip(int index)
     {
         FadeManager.Fade();
-        while (FadeManager.Fading) { }
+        WaitForFadeClip(index);
+    }
+
+    private static IEnumerator WaitForFadeClip(int index)
+    {
+        while (FadeManager.Fading) { yield return new WaitForEndOfFrame(); }
         Application.LoadLevel(GetClipName(index));
         FadeManager.Unfade();
     }

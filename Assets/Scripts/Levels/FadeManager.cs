@@ -3,10 +3,10 @@ using System.Collections;
 
 public class FadeManager: MonoBehaviour
 {
-
     private static FadeManager currentFade;
-    public static float FadeTime = 1.0f;
+    public static float FadeTime = 1;
     public static Color FadeColor = Color.black;
+    public static Material Material;
 
     public static bool Fading;
     public static bool Unfading;
@@ -24,17 +24,16 @@ public class FadeManager: MonoBehaviour
         if (Fading || Unfading) return;
         Unfading = true;
         currentFade.StartCoroutine(currentFade.Unfade(FadeTime, FadeColor));
-        Destroy(currentFade);
     }
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        //m_Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
+        Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
     }
     private void DrawQuad(Color aColor, float aAlpha)
     {
         aColor.a = aAlpha;
-        //m_Material.SetPass(0);
+        Material.SetPass(0);
         GL.Color(aColor);
         GL.PushMatrix();
         GL.LoadOrtho();
@@ -69,5 +68,6 @@ public class FadeManager: MonoBehaviour
             DrawQuad(aColor, t);
         }
         Unfading = false;
+        Destroy(currentFade);
     }
 }
