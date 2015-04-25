@@ -11,3 +11,4 @@ public class CustomCursor : MonoBehaviour
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 }
+

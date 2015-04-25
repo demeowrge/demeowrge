@@ -133,6 +133,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &411197882
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.8100004
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.6700001
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .189999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &959691868
 Prefab:
   m_ObjectHideFlags: 0
@@ -397,7 +439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1780132201
 MonoBehaviour:
   m_ObjectHideFlags: 0
