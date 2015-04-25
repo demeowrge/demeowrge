@@ -243,11 +243,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monochrome: 1
-  grainIntensityMin: .100000001
-  grainIntensityMax: .200000003
+  grainIntensityMin: .200000003
+  grainIntensityMax: .600000024
   grainSize: 2
   scratchIntensityMin: .0500000007
-  scratchIntensityMax: .25
+  scratchIntensityMax: 1.79999995
   scratchFPS: 10
   scratchJitter: .00999999978
   grainTexture: {fileID: 2800000, guid: 1b41539c083696d4381bf899f138f013, type: 3}
