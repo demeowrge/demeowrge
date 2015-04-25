@@ -7,65 +7,52 @@ public class Cat : MonoBehaviour
     public FloatRange idleRange;
     public FloatRange speedRange;
 
-    private Coroutine currentAction = null;
+    private Coroutine currentAction;
 
     void Update()
     {
         if (currentAction == null)
         {
-            pickAction();
-        }
-    }
+            float val = Random.value;
 
-    private void pickAction()
-    {
-        float val = Random.value;
-
-        if (val < 0.7f)
-        {
-            Idle(idleRange.random());
-        }
-        else
-        {
-            Move(transform.position + (Vector3)Random.insideUnitCircle * 2.25f, speedRange.random());
-        }
-    }
-
-    public void StopAction()
-    {
-        if (currentAction != null)
-        {
-            StopCoroutine(currentAction);
+            if (val < 0.7f)
+            {
+                Idle(idleRange.random());
+            }
+            else
+            {
+                Move(transform.position + (Vector3)Random.insideUnitCircle * 2.25f, speedRange.random());
+            }
         }
     }
 
     public void Idle(float time)
     {
-        currentAction = StartCoroutine(idle(time));
+        StopAllCoroutines();
+        currentAction = StartCoroutine(idle(idleRange.random()));
     }
 
     public void Move(Vector3 destination, float speed)
     {
+        StopAllCoroutines();
         currentAction = StartCoroutine(move(destination, speed));
     }
 
     public void Death()
     {
+        StopAllCoroutines();
+
         CatAnimationController animationController = GetComponent<CatAnimationController>();
         animationController.Death();
-    }
-
-    private IEnumerator idle()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(10f);
-        }
+        
+        Destroy(gameObject, 5f);
+        Destroy(this);
     }
 
     private IEnumerator idle(float time)
     {
         yield return new WaitForSeconds(time);
+
         currentAction = null;
     }
 
@@ -76,6 +63,7 @@ public class Cat : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
             yield return null;
         }
+
         currentAction = null;
     }
 }
