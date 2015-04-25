@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &105626
 GameObject:
   m_ObjectHideFlags: 1
@@ -52,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &107314
 GameObject:
   m_ObjectHideFlags: 1
@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &118104
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &148676
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +169,7 @@ GameObject:
   - 114: {fileID: 11492300}
   - 114: {fileID: 11469518}
   - 114: {fileID: 11419266}
+  - 114: {fileID: 11433436}
   m_Layer: 0
   m_Name: IngameUIandCamera
   m_TagString: MainCamera
@@ -230,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &176808
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &185406
 GameObject:
   m_ObjectHideFlags: 1
@@ -319,6 +320,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &197414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 444828}
+  - 114: {fileID: 11449528}
+  m_Layer: 0
+  m_Name: TerrainContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &417680
 Transform:
   m_ObjectHideFlags: 1
@@ -338,14 +355,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 4.84000015, y: 4.26000023, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22469314}
   - {fileID: 450040}
   - {fileID: 417680}
+  - {fileID: 444828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &444828
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.6700001, y: -7.40999985, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426870}
+  m_RootOrder: 3
 --- !u!4 &450040
 Transform:
   m_ObjectHideFlags: 1
@@ -367,7 +397,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: .258823544, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -429,9 +459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '2
-
-'
+  m_Text: 1
 --- !u!114 &11406752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -602,7 +630,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148676}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 508da07f1a2c6cd4c8056e27884246b2, type: 3}
   m_Name: 
@@ -765,6 +793,18 @@ MonoBehaviour:
   LightingCounter: {fileID: 137036}
   ProphetCounter: {fileID: 107314}
   DirectCounter: {fileID: 113632}
+--- !u!114 &11433436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c5991af62b5fc46805b56d29b42d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cats: 1
 --- !u!114 &11437892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,6 +868,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11449528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58178b402b5f244ca3b49439f7b7baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabFieldSprite: {fileID: 411300, guid: 7a03c203dba0b0949b3e9e09b6228d86, type: 2}
+  fieldWidth: 80
+  fieldHeight: 40
+  ditchYPosition: 0
+  pxTileWidth: 48
+  pxTileHeight: 48
 --- !u!114 &11465342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -913,16 +970,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786177a7e7dfa514ea410e8f11913410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelWidth: 15
-  LevelHeight: 8
+  LevelWidth: 30
+  LevelHeight: 20
   TerrainContainer: {fileID: 0}
   Terrains:
   - {fileID: 117716, guid: 7a03c203dba0b0949b3e9e09b6228d86, type: 2}
   PropSpawnChance: 0
   PropsContainer: {fileID: 0}
   Props: []
-  SpriteDefPxWidth: .400000006
-  SpriteDefPxHeight: .400000006
+  SpriteDefPxWidth: .159999996
+  SpriteDefPxHeight: .159999996
   SpriteScale: 3
 --- !u!114 &11469770
 MonoBehaviour:
