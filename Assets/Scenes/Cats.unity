@@ -451,5 +451,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9003d9652682247a29b80344fdc1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lbuttonPrefab: {fileID: 196896, guid: 7303eda782caa734b97b91cef0efbc69, type: 2}
+  lbuttonPrefab: {fileID: 169068, guid: d3e6c4e8894df2242993e948fc0ba3fe, type: 2}
   rbuttonPrefab: {fileID: 139354, guid: 9bbcc27ed661fdd469ac0600a1f6bd7a, type: 2}

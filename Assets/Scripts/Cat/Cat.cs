@@ -33,7 +33,10 @@ public class Cat : MonoBehaviour
 
     public void StopAction()
     {
-        StopCoroutine(currentAction);
+        if (currentAction != null)
+        {
+            StopCoroutine(currentAction);
+        }
     }
 
     public void Idle(float time)
