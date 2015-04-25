@@ -25,45 +25,33 @@ public static class LevelManager
         return ClipNameTemplate + " " + index;
     }
 
-    private static int indexBuffer;
+    private static string nameBuffer;
 
-    private static void LoadLevel(int index)
+    private static void LoadScene(string name)
     {
-        indexBuffer = index;
-        FadeManager.Fade(PostFadeLoadLevel);
+        nameBuffer = name;
+        FadeManager.Fade(PostFadeLoadScene);
     }
 
-    public static void PostFadeLoadLevel()
+    public static void PostFadeLoadScene()
     {
-        Application.LoadLevel(GetLevelName(indexBuffer));
-        FadeManager.Unfade();
-    }
-
-    private static void LoadClip(int index)
-    {
-        indexBuffer = index;
-        FadeManager.Fade(PostFadeLoadClip);
-    }
-
-    public static void PostFadeLoadClip()
-    {
-        Application.LoadLevel(GetClipName(indexBuffer));
+        Application.LoadLevel(nameBuffer);
         FadeManager.Unfade();
     }
 
     public static void NextLevel()
     {
-        LoadLevel(++currentLevel);
+        LoadScene(GetLevelName(++currentLevel));
     }
 
     public static void NextClip()
     {
-        LoadClip(++currentClip);
+        LoadScene(GetClipName(++currentClip));
     }
 
     public static void RestartLevel()
     {
-        LoadLevel(currentLevel);
+        LoadScene(GetLevelName(currentLevel));
     }
 
     public static void Save()
@@ -75,26 +63,26 @@ public static class LevelManager
     {
         if (!HaveSavedLevel) return;
         currentLevel = savedLevel;
-        LoadLevel(savedLevel);
+        LoadScene(GetLevelName(savedLevel));
     }
 
     public static void NewGame()
     {
         currentLevel = 0;
         currentClip = 0;
-        LoadClip(0);
+        LoadScene(GetClipName(0));
     }
 
     public static void MainMenu()
     {
         currentLevel = 0;
         currentClip = 0;
-        Application.LoadLevel("MainMenu");
+        LoadScene("MainMenu");
     }
 
     public static void DefeatClip()
     {
-        Application.LoadLevel("Defeat Clip");
+        LoadScene("Defeat Clip");
     }
 
     public static void Exit()

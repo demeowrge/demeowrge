@@ -11,7 +11,6 @@ public abstract class VictoryCondition : MonoBehaviour
 	    {
 	        OnVictory();
 	    }
-
 	}
     
     protected void OnVictory()
