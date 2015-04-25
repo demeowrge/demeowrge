@@ -2,6 +2,7 @@
 
 public class ClipPlayer : MonoBehaviour
 {
+    public bool isLastClip = false;
     public GameObject[] slides;
     private int SlideNumber;
 
@@ -15,7 +16,10 @@ public class ClipPlayer : MonoBehaviour
     {
         SlideNumber++;
         if (SlideNumber >= slides.GetLength(0))
-            LevelManager.NextLevel();
+            if (!isLastClip)
+                LevelManager.NextLevel();
+            else
+                LevelManager.MainMenu();
 
         for (int i = 0; i < slides.GetLength(0); i++)
             slides[i].SetActive(i == SlideNumber);
