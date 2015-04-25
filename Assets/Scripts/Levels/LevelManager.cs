@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public static class LevelManager
 {
@@ -25,12 +27,18 @@ public static class LevelManager
 
     private static void LoadLevel(int index)
     {
+        FadeManager.Fade();
+        while (FadeManager.Fading) { }
         Application.LoadLevel(GetLevelName(index));
+        FadeManager.Unfade();
     }
 
     private static void LoadClip(int index)
     {
+        FadeManager.Fade();
+        while (FadeManager.Fading) { }
         Application.LoadLevel(GetClipName(index));
+        FadeManager.Unfade();
     }
 
     public static void NextLevel()
