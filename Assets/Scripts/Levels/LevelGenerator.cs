@@ -10,9 +10,12 @@ public class LevelGenerator : MonoBehaviour
     public int LevelWidth;
     public int LevelHeight;
 
+    public GameObject TerrainContainer;
+    public GameObject[] Terrains;
+
     public float PropSpawnChance;
 
-    public GameObject[] Terrains;
+    public GameObject PropsContainer;
     public GameObject[] Props;
 
     public float SpriteDefPxWidth;
@@ -46,6 +49,8 @@ public class LevelGenerator : MonoBehaviour
                 );
 
                 terrain.transform.localScale = new Vector3(SpriteScale, SpriteScale, SpriteScale);
+
+                terrain.transform.parent = TerrainContainer.transform;
             }
         }
     }
