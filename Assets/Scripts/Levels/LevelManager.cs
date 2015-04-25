@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class LevelManager
 {
-    private const string LevelNameTemplate = "Test Level";
-    private const string ClipNameTemplate = "Test Clip";
+    private const string LevelNameTemplate = "Level";
+    private const string ClipNameTemplate = "Clip";
     private static int savedLevel;
     private static int currentLevel;
     private static int currentClip;
@@ -80,6 +80,8 @@ public static class LevelManager
 
     public static void NewGame()
     {
+        currentLevel = 0;
+        currentClip = 0;
         LoadClip(0);
     }
 

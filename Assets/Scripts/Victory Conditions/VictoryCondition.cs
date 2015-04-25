@@ -8,12 +8,15 @@ public abstract class VictoryCondition : MonoBehaviour
 
     protected void Update () {
 	    if (Condition)
-            OnVictory();
+	    {
+	        OnVictory();
+	    }
 
 	}
     
     protected void OnVictory()
     {
+        Destroy(gameObject);
         LevelManager.NextClip();
     }
 }
