@@ -6,19 +6,10 @@ public class ReachEnd : VictoryCondition
     public int NeededCats;
     public int FinishedCats; //{ get; private set; }
 
-    void Start()
-    {
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Cat")
          FinishCat();
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-
     }
 
     public void FinishCat()
@@ -27,6 +18,6 @@ public class ReachEnd : VictoryCondition
     }
     protected override bool Condition
     {
-        get { return FinishedCats > NeededCats; }
+        get { return FinishedCats >= NeededCats; }
     }
 }
