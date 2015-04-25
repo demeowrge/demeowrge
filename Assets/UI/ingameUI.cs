@@ -19,6 +19,6 @@ public class ingameUI : MonoBehaviour {
 
     public void bnMenuClick()
     {
-        Debug.Log("bnMenu_Clicked");
+        LevelManager.MainMenu();
     }
 }

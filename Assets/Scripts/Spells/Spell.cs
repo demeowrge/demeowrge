@@ -17,7 +17,7 @@ public class Spell : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             foreach (var effect in SpellEffects)
-                Instantiate(effect, gameObject.transform.position, Quaternion.identity);
+                Instantiate(effect, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
         if (Input.GetMouseButtonDown(1))
@@ -33,13 +33,13 @@ public class Spell : MonoBehaviour
     {
         var destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         destination.z = 0;
-        PrecastEffect = (GameObject)Instantiate(PrecastEffect, destination, Quaternion.identity);
+        PrecastEffect = (GameObject)Instantiate(PrecastEffect, destination, PrecastEffect.transform.rotation);
         PrecastEffect.transform.SetParent(gameObject.transform);
         PrecastEffect.AddComponent<MouseFollow>();
     }
 
     public void RemovePrecastEffect()
     {
-        Destroy(PrecastEffect);
+        PrecastEffect.GetComponent<ParticleSystem>().Stop();
     }
 }
