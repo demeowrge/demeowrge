@@ -56,7 +56,7 @@ public static class LevelManager
 
     public static void Save()
     {
-        savedLevel = currentLevel;
+        savedLevel = currentLevel+1;
     }
 
     public static void Load()

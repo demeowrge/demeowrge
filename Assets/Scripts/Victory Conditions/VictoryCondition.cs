@@ -16,6 +16,7 @@ public abstract class VictoryCondition : MonoBehaviour
     protected void OnVictory()
     {
         Destroy(gameObject);
+        LevelManager.Save();
         LevelManager.NextClip();
     }
 }
