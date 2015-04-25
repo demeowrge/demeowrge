@@ -363,7 +363,7 @@ Prefab:
     - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
       propertyPath: TerrainContainer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1111131590}
     - target: {fileID: 11419266, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
       propertyPath: m_Enabled
       value: 0
@@ -379,6 +379,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1111131590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 197414, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
+  m_PrefabInternal: {fileID: 1111131589}
 --- !u!1 &1435024162
 GameObject:
   m_ObjectHideFlags: 0

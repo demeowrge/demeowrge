@@ -8,10 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
-  - enabled: 1
     path: Assets/Scenes/Clips/Clip 0.unity
   - enabled: 1
     path: Assets/Scenes/Clips/Clip 1.unity
   - enabled: 1
+    path: Assets/Scenes/Clips/Clip 2.unity
+  - enabled: 1
+    path: Assets/Scenes/Clips/Clip 3.unity
+  - enabled: 1
+    path: Assets/Scenes/Clips/Clip 4.unity
+  - enabled: 1
     path: Assets/Scenes/Clips/Defeat Clip.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 2.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 3.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 4.unity

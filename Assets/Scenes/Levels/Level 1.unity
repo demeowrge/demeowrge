@@ -445,90 +445,14 @@ Prefab:
     - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
       propertyPath: TerrainContainer
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11419266, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: SpriteDefPxWidth
-      value: .159999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: SpriteDefPxHeight
-      value: .159999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: SpriteScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: LevelWidth
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 11492300, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2065196, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: .258823544
-      objectReference: {fileID: 0}
-    - target: {fileID: 11404358, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_Text
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 167044, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 137036, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 103896, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 116810, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 144788, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180556, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105626, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11469518, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
-      propertyPath: LevelHeight
-      value: 20
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1111131590}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1111131590 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 148676, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
+  m_PrefabParentObject: {fileID: 197414, guid: 7c612a2e818ce994c83ef3f501cbb3ef, type: 2}
   m_PrefabInternal: {fileID: 1111131589}
---- !u!114 &1111131591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1111131590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c5991af62b5fc46805b56d29b42d02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cats: 1
 --- !u!1 &1435024162
 GameObject:
   m_ObjectHideFlags: 0

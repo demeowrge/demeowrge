@@ -170,6 +170,7 @@ GameObject:
   - 114: {fileID: 11469518}
   - 114: {fileID: 11419266}
   - 114: {fileID: 11433436}
+  - 114: {fileID: 11443472}
   m_Layer: 0
   m_Name: IngameUIandCamera
   m_TagString: MainCamera
@@ -868,6 +869,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11443472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c5991af62b5fc46805b56d29b42d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cats: 1
 --- !u!114 &11449528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -976,7 +989,7 @@ MonoBehaviour:
   Terrains:
   - {fileID: 117716, guid: 7a03c203dba0b0949b3e9e09b6228d86, type: 2}
   PropSpawnChance: 0
-  PropsContainer: {fileID: 0}
+  PropsContainer: {fileID: 197414}
   Props: []
   SpriteDefPxWidth: .159999996
   SpriteDefPxHeight: .159999996
