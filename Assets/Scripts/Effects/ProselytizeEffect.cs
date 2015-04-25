@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProselytizeEffect : AbsEffect
+public class ProselytizeEffect : AbsCatEffect
 {
-    protected override void Effect(Collider2D obj)
+    protected override void CatEffect(Cat cat)
     {
-        throw new System.NotImplementedException();
+        cat.Proselytize();
     }
 }

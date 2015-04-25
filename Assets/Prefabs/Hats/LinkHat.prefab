@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 430628}
   - 212: {fileID: 21206424}
   m_Layer: 0
-  m_Name: LinkHat
+  m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
