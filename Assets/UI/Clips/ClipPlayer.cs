@@ -4,6 +4,8 @@ public class ClipPlayer : MonoBehaviour
 {
     public bool isLastClip = false;
     public GameObject[] slides;
+
+    private bool isEnded;
     private int SlideNumber;
 
 	void Start ()
@@ -14,19 +16,22 @@ public class ClipPlayer : MonoBehaviour
 
     void NextSlide()
     {
+        if (isEnded) return;
         SlideNumber++;
-        if (SlideNumber == slides.GetLength(0))
+
+        if (SlideNumber >= slides.GetLength(0))
         {
+            isEnded = true;
             if (!isLastClip)
                 LevelManager.NextLevel();
             else
                 LevelManager.MainMenu();
-        }
-        for (int i = 0; i < slides.GetLength(0); i++)
-            slides[i].SetActive(i == SlideNumber);
+        } else
+            for (int i = 0; i < slides.GetLength(0); i++)
+                slides[i].SetActive(i == SlideNumber);
     }
 
-	void Update ()
+	void FixedUpdate()
 	{
 	    if (Input.GetMouseButtonDown(0))
 	        NextSlide();

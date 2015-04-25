@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class mainMenuUI : MonoBehaviour
 {
-	public void bnNewGameClick () {
+    public GameObject bnContinue;
+
+    private void Start()
+    {
+        if (!LevelManager.HaveSavedLevel) return;
+
+        bnContinue.GetComponent<Button>().interactable = true;
+        bnContinue.GetComponentInChildren<Text>().color = Color.white;
+    }
+
+    public void bnNewGameClick () {
         LevelManager.NewGame();
 	}
 
 	public void bnContinueClick()
 	{
-		Debug.Log("bnContinue_Clicked");
+		LevelManager.Load();
 	}
 
 	public void bnMultiplayerClick()
