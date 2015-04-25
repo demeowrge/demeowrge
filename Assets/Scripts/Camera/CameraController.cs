@@ -6,73 +6,61 @@ public class CameraController : MonoBehaviour
     public int CameraMoveBoundary;
     public float CameraMoveSpeed;
 
-    protected float ScreenHalfWidth;
     protected float ScreenHalfHeight;
+    protected float ScreenHalfWidth;
 
-    protected bool LockHorizontal = false;
-    protected bool LockVertical = false;
+    protected float ScreenHeight;
+    protected float ScreenWidth;
 
-    void Start()
-    {
-        ScreenHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
-        ScreenHalfHeight = Camera.main.orthographicSize;
-
-        float screenWidth = ScreenHalfWidth * 2f;
-        float screenHeight = ScreenHalfHeight * 2f;
-
-        if (screenHeight >= LevelGenerator.LevelPxWidth)
-        {
-            LockHorizontal = true;
-        }
-
-        if (screenWidth >= LevelGenerator.LevelPxHeight)
-        {
-            LockVertical = true;
-        }
-
-        transform.position = new Vector3(
-            LevelGenerator.LevelPxWidth / 2f,
-            LevelGenerator.LevelPxHeight / 2f,
-            -10f
-        );
-    }
+    protected FloatRange CameraInnerHeightBorders;
+    protected FloatRange CameraInnerWidthBorders;
 
     void Update()
     {
+        ScreenHalfHeight = Camera.main.orthographicSize;
+        ScreenHalfWidth = ScreenHalfHeight * Camera.main.aspect;
+        ScreenHeight = ScreenHalfHeight * 2f;
+        ScreenWidth = ScreenHalfWidth * 2f;
+        CameraInnerHeightBorders = new FloatRange(ScreenHalfHeight, LevelGenerator.LevelPxHeight - ScreenHalfHeight);
+        CameraInnerWidthBorders = new FloatRange(ScreenHalfWidth, LevelGenerator.LevelPxWidth - ScreenHalfWidth);
+
         Vector3 position = transform.position;
 
-        if (!LockHorizontal && Input.mousePosition.x < 0 + CameraMoveBoundary)
+        if (CameraInnerHeightBorders.min > CameraInnerHeightBorders.max)
         {
-            float step = CameraMoveSpeed * Time.deltaTime;
-            float destination = position.x - step;
-
-            position.x = (destination - ScreenHalfWidth > 0f) ? destination : ScreenHalfWidth;
+            position.y = LevelGenerator.LevelPxHeight/2f;
         }
-
-        if (!LockHorizontal && Input.mousePosition.x > Screen.width - CameraMoveBoundary)
-        {
-            float step = CameraMoveSpeed * Time.deltaTime;
-            float destination = position.x + step;
-
-            position.x = (destination + ScreenHalfWidth < LevelGenerator.LevelPxWidth) ? destination : LevelGenerator.LevelPxWidth - ScreenHalfWidth;
-        }
-
-        if (!LockVertical && Input.mousePosition.y < 0 + CameraMoveBoundary)
+        else if (Input.mousePosition.y < 0 + CameraMoveBoundary)
         {
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.y - step;
-
-            position.y = (destination - ScreenHalfHeight > 0f) ? destination : ScreenHalfHeight;
+            position.y = Mathf.Max(destination, CameraInnerHeightBorders.min);
         }
-
-        if (!LockVertical && Input.mousePosition.y > Screen.height - CameraMoveBoundary)
+        else if (Input.mousePosition.y > Screen.height - CameraMoveBoundary)
         {
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.y + step;
+            position.y = Mathf.Min(destination, CameraInnerHeightBorders.max);
+        }
 
-            position.y = (destination + ScreenHalfHeight < LevelGenerator.LevelPxHeight) ? destination : LevelGenerator.LevelPxHeight - ScreenHalfHeight;
+        if (CameraInnerWidthBorders.min > CameraInnerWidthBorders.max)
+        {
+            position.x = LevelGenerator.LevelPxWidth/2f;
+        }
+        else if (Input.mousePosition.x < 0 + CameraMoveBoundary)
+        {
+            float step = CameraMoveSpeed * Time.deltaTime;
+            float destination = position.x - step;
+            position.x = Mathf.Max(destination, CameraInnerWidthBorders.min);
+        }
+        else if (Input.mousePosition.x > Screen.width - CameraMoveBoundary)
+        {
+            float step = CameraMoveSpeed * Time.deltaTime;
+            float destination = position.x + step;
+            position.x = Mathf.Min(destination, CameraInnerWidthBorders.max);
         }
 
         transform.position = position;
     }
+
 }
