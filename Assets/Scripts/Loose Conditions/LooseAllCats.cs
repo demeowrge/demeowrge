@@ -4,7 +4,7 @@ using System.Collections;
 public class LooseAllCats : DefeatCondition
 {
     private static int remainingCats;
-    public GameObject[] Cats;
+    public int Cats;
 
     public static void LooseCat()
     {
@@ -13,7 +13,7 @@ public class LooseAllCats : DefeatCondition
 	// Use this for initialization
 	void Start ()
 	{
-	    remainingCats = Cats.Length;
+	    remainingCats = Cats;
 	}
 	
 	// Update is called once per frame
