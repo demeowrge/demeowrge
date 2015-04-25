@@ -7,10 +7,9 @@ public class FearEffect : AbsCatEffect
 
     protected override void CatEffect(Cat cat)
     {
-        cat.StopAction();
         cat.Move(
             (cat.transform.position - transform.position) * fearRange.random(),
-            cat.speedRange.max * 2
+            cat.SpeedRange.max * 2
         );
     }
 }
