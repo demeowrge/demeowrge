@@ -3,71 +3,76 @@ using System.Collections;
 
 public class FadeManager: MonoBehaviour
 {
-    private static FadeManager currentFade;
-    public static float FadeTime = 1;
-    public static Color FadeColor = Color.black;
-    public static Material Material;
+    private static GameObject fp;
+    private static SpriteRenderer sr;
+    public GameObject FadePrefab;
+    float speed = 1f;
+    float alpha = 0;
 
     public static bool Fading;
     public static bool Unfading;
 
-    public static void Fade()
+    public delegate void act();
+
+    public static void Fade(act postFade)
     {
         if (Fading || Unfading) return;
+        var go = Instantiate(fp);
+        var fm = go.GetComponent<FadeManager>();
+        sr = go.GetComponent<SpriteRenderer>();
+        DontDestroyOnLoad(go);
         Fading = true;
-        currentFade = (new GameObject("Fade Manager")).AddComponent<FadeManager>();
-        currentFade.StartCoroutine(currentFade.Fade(FadeTime, FadeColor));
+        fm.StartCoroutine(fm.WaitForFade(postFade));
+    }
+
+    public IEnumerator WaitForFade(act postFade)
+    {
+        while (Fading)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        postFade();
     }
 
     public static void Unfade()
     {
         if (Fading || Unfading) return;
         Unfading = true;
-        currentFade.StartCoroutine(currentFade.Unfade(FadeTime, FadeColor));
-    }
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-        Material = new Material("Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }");
-    }
-    private void DrawQuad(Color aColor, float aAlpha)
-    {
-        aColor.a = aAlpha;
-        Material.SetPass(0);
-        GL.Color(aColor);
-        GL.PushMatrix();
-        GL.LoadOrtho();
-        GL.Begin(GL.QUADS);
-        GL.Vertex3(0, 0, -1);
-        GL.Vertex3(0, 1, -1);
-        GL.Vertex3(1, 1, -1);
-        GL.Vertex3(1, 0, -1);
-        GL.End();
-        GL.PopMatrix();
     }
 
-    private IEnumerator Fade(float aFadeOutTime, Color aColor)
+    // Use this for initialization
+    void Start()
     {
-        float t = 0.0f;
-        while (t < 1.0f)
-        {
-            yield return new WaitForEndOfFrame();
-            t = Mathf.Clamp01(t + Time.deltaTime / aFadeOutTime);
-            DrawQuad(aColor, t);
-        }
-        Fading = false;
+        if (fp != null) return;
+        fp = FadePrefab;
+        Destroy(this);
     }
 
-    private IEnumerator Unfade(float aFadeInTime, Color aColor)
+    // Update is called once per frame
+    void Update()
     {
-        float t = 1.0f;
-        while (t > 0.0f)
+        if (Unfading)
         {
-            yield return new WaitForEndOfFrame();
-            t = Mathf.Clamp01(t - Time.deltaTime / aFadeInTime);
-            DrawQuad(aColor, t);
+            alpha = alpha - speed * Time.deltaTime;
+            if (alpha > 0)
+                sr.color = new Color(sr.color.a, sr.color.b, sr.color.g, alpha);
+            else
+            {
+                sr.color = new Color(sr.color.a, sr.color.b, sr.color.g, 0f);
+                Unfading = false;
+                Destroy(gameObject);
+            }
         }
-        Unfading = false;
-        Destroy(currentFade);
+        if (Fading)
+        {
+            alpha = alpha + speed * Time.deltaTime;
+            if (alpha < 1)
+                sr.color = new Color(sr.color.a, sr.color.b, sr.color.g, alpha);
+            else
+            {
+                sr.color = new Color(sr.color.a, sr.color.b, sr.color.g, 1f);
+                Fading = false;
+            }
+        }
     }
 }
