@@ -40,6 +40,6 @@ public class Spell : MonoBehaviour
 
     public void RemovePrecastEffect()
     {
-        Destroy(PrecastEffect);
+        PrecastEffect.GetComponent<ParticleSystem>().Stop();
     }
 }
