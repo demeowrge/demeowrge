@@ -66,6 +66,7 @@ GameObject:
   - 81: {fileID: 8195206}
   - 114: {fileID: 11492300}
   - 114: {fileID: 11469518}
+  - 114: {fileID: 11450108}
   m_Layer: 0
   m_Name: IngameUIandCamera
   m_TagString: MainCamera
@@ -201,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22469314}
@@ -494,6 +495,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11450108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148676}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508da07f1a2c6cd4c8056e27884246b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadePrefab: {fileID: 119244, guid: 49d106f3f88179d49977771418abfce8, type: 2}
 --- !u!114 &11465342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,9 +592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786177a7e7dfa514ea410e8f11913410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelWidth: 20
+  LevelWidth: 15
   LevelHeight: 8
-  TerrainContainer: {fileID: 118104}
+  TerrainContainer: {fileID: 0}
   Terrains:
   - {fileID: 117716, guid: 7a03c203dba0b0949b3e9e09b6228d86, type: 2}
   PropSpawnChance: 0
