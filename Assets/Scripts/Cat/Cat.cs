@@ -62,6 +62,7 @@ public class Cat : MonoBehaviour
 
     public void Death()
     {
+        LooseAllCats.LooseCat();
         StopAllCoroutines();
 
         CatAnimationController animationController = GetComponent<CatAnimationController>();

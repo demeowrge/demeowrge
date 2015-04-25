@@ -73,6 +73,11 @@ public static class LevelManager
         Application.LoadLevel("MainMenu");
     }
 
+    public static void DefeatClip()
+    {
+        Application.LoadLevel("Defeat Clip");
+    }
+
     public static void Exit()
     {
         Application.Quit();
