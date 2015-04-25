@@ -41,8 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrecastEffect: {fileID: 116846, guid: c1361e2fd4e30e04f918f95e5f8d11ea, type: 2}
   SpellEffects:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 179104, guid: c0f4f9327c74a7f4dbb3f6c82ee0ddc7, type: 2}
+  - {fileID: 175618, guid: 111259b31c709ba48ae74dd70312df25, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

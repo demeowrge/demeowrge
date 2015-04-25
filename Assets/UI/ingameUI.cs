@@ -9,7 +9,7 @@ public class ingameUI : MonoBehaviour {
 
     public void bnProphetClick()
     {
-        Debug.Log("bnProphet_Clicked");
+        Instantiate(SpellManager.ProphetSpell);
     }
 
     public void bnLightingClick()
