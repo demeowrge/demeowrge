@@ -25,29 +25,29 @@ public static class LevelManager
         return ClipNameTemplate + " " + index;
     }
 
+    private static int indexBuffer;
+
     private static void LoadLevel(int index)
     {
-        FadeManager.Fade();
-        WaitForFadeLevel(index);
+        indexBuffer = index;
+        FadeManager.Fade(PostFadeLoadLevel);
     }
 
-    private static IEnumerator WaitForFadeLevel(int index)
+    public static void PostFadeLoadLevel()
     {
-        while (FadeManager.Fading) { yield return new WaitForEndOfFrame(); }
-        Application.LoadLevel(GetLevelName(index));
+        Application.LoadLevel(GetLevelName(indexBuffer));
         FadeManager.Unfade();
     }
 
     private static void LoadClip(int index)
     {
-        FadeManager.Fade();
-        WaitForFadeClip(index);
+        indexBuffer = index;
+        FadeManager.Fade(PostFadeLoadClip);
     }
 
-    private static IEnumerator WaitForFadeClip(int index)
+    public static void PostFadeLoadClip()
     {
-        while (FadeManager.Fading) { yield return new WaitForEndOfFrame(); }
-        Application.LoadLevel(GetClipName(index));
+        Application.LoadLevel(GetClipName(indexBuffer));
         FadeManager.Unfade();
     }
 
