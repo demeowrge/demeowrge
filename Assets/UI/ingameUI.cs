@@ -12,6 +12,16 @@ public class ingameUI : MonoBehaviour {
         Instantiate(SpellManager.ProphetSpell);
     }
 
+    public void bnDirectClick()
+    {
+        Instantiate(SpellManager.DirectSpell);
+    }
+
+    public void bnFishClick()
+    {
+        Instantiate(SpellManager.FishSpell);
+    }
+
     public void bnLightingClick()
     {
         Instantiate(SpellManager.LightningSpell);

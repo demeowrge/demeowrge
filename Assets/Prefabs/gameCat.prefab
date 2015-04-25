@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39462fdd7e2d76749a982cfd1a27d984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HatPrefab: {fileID: 106032, guid: e1ffbb5e14d6644448328ece812629b3, type: 2}
+  HatPrefab: {fileID: 118498, guid: 2df369f25117cb74889dbeec33226cb0, type: 2}
   IdleRange:
     min: .5
     max: 2.5
