@@ -8,13 +8,10 @@ public class DirectEffect : AbsCatEffect
 
     protected override void CatEffect(Cat cat)
     {
-        if (destination != null)
-        {
-            cat.StopAction();
-            cat.Move(
-                destination + (Vector3)Random.insideUnitCircle,
-                cat.speedRange.random()
-            );
-        }
+        cat.StopAction();
+        cat.Move(
+            destination + (Vector3)Random.insideUnitCircle,
+            cat.speedRange.random()
+        );
     }
 }

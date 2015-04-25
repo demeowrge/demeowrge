@@ -96,11 +96,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.63999999
+      value: 3.33999991
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.66999996
+      value: 6.46000004
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -133,48 +133,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &411197882
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -11.8100004
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -10.6700001
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: .189999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 443770, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e48af6720eb67a84995ed0bbf7004cc2, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &959691868
 Prefab:
   m_ObjectHideFlags: 0
@@ -184,11 +142,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.98000002
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.920000017
+      value: 3.86999989
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -230,11 +188,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .479999989
+      value: 5.46000004
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.58000004
+      value: 3.21000004
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -276,11 +234,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.860000014
+      value: 4.11999989
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .209999993
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -318,11 +276,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.25999999
+      value: 7.23999977
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.610000014
+      value: 4.17999983
       objectReference: {fileID: 0}
     - target: {fileID: 452810, guid: 9ea3bcdaf161dc04bba4ce890f0a826d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -367,7 +325,7 @@ GameObject:
   - 92: {fileID: 1780132198}
   - 124: {fileID: 1780132197}
   - 81: {fileID: 1780132196}
-  - 114: {fileID: 1780132201}
+  - 114: {fileID: 1780132202}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -435,12 +393,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780132195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 5, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
---- !u!114 &1780132201
+  m_RootOrder: 0
+--- !u!114 &1780132202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -448,8 +406,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780132195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a9003d9652682247a29b80344fdc1e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 786177a7e7dfa514ea410e8f11913410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lbuttonPrefab: {fileID: 169068, guid: d3e6c4e8894df2242993e948fc0ba3fe, type: 2}
-  rbuttonPrefab: {fileID: 139354, guid: 9bbcc27ed661fdd469ac0600a1f6bd7a, type: 2}
+  LevelWidth: 12
+  LevelHeight: 10
+  PropSpawnChance: 0
+  Terrains:
+  - {fileID: 117716, guid: 7a03c203dba0b0949b3e9e09b6228d86, type: 2}
+  Props: []
+  SpriteDefPxWidth: .400000006
+  SpriteDefPxHeight: .400000006
+  SpriteScale: 3
