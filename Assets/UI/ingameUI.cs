@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ingameUI : MonoBehaviour {
-    void Awake()
+    public void bnRestartClick()
     {
-        //DontDestroyOnLoad(transform.gameObject);
+        LevelManager.RestartLevel();
     }
 
     public void bnProphetClick()
