@@ -35,12 +35,12 @@ public static class LevelManager
 
     public static void NextLevel()
     {
-        LoadLevel(currentLevel++);
+        LoadLevel(++currentLevel);
     }
 
     public static void NextClip()
     {
-        LoadClip(currentClip++);
+        LoadClip(++currentClip);
     }
 
     public static void RestartLevel()
@@ -62,8 +62,7 @@ public static class LevelManager
 
     public static void NewGame()
     {
-        currentLevel = 1;
-        LoadLevel(currentLevel);
+        LoadClip(0);
     }
 
     public static void MainMenu()
