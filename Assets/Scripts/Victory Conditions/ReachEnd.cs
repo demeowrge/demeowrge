@@ -5,12 +5,20 @@ public class ReachEnd : VictoryCondition
 {
     public int NeededCats;
     public int FinishedCats; //{ get; private set; }
-    public GameObject FinishZone;
 
     void Start()
     {
-        var binder = FinishZone.AddComponent<ReachEndBinder>();
-        binder.FinishCat = FinishCat;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Cat")
+         FinishCat();
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+
     }
 
     public void FinishCat()

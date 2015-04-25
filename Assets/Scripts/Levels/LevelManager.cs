@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public static class LevelManager
 {
@@ -25,22 +27,28 @@ public static class LevelManager
 
     private static void LoadLevel(int index)
     {
+        FadeManager.Fade();
+        while (FadeManager.Fading) { }
         Application.LoadLevel(GetLevelName(index));
+        FadeManager.Unfade();
     }
 
     private static void LoadClip(int index)
     {
+        FadeManager.Fade();
+        while (FadeManager.Fading) { }
         Application.LoadLevel(GetClipName(index));
+        FadeManager.Unfade();
     }
 
     public static void NextLevel()
     {
-        LoadLevel(currentLevel++);
+        LoadLevel(++currentLevel);
     }
 
     public static void NextClip()
     {
-        LoadClip(currentClip++);
+        LoadClip(++currentClip);
     }
 
     public static void RestartLevel()
@@ -62,8 +70,7 @@ public static class LevelManager
 
     public static void NewGame()
     {
-        currentLevel = 1;
-        LoadLevel(currentLevel);
+        LoadClip(0);
     }
 
     public static void MainMenu()
@@ -71,6 +78,11 @@ public static class LevelManager
         currentLevel = 0;
         currentClip = 0;
         Application.LoadLevel("MainMenu");
+    }
+
+    public static void DefeatClip()
+    {
+        Application.LoadLevel("Defeat Clip");
     }
 
     public static void Exit()
