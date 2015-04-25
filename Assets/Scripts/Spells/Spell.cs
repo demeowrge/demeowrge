@@ -8,11 +8,17 @@ public class Spell : MonoBehaviour
 
     public void Start()
     {
+        gameObject.AddComponent<MouseFollow>();
         ApplyPrecastEffect();
     }
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(SpellEffect, gameObject.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
         if (Input.GetMouseButtonDown(1))
             Destroy(gameObject);
     }
@@ -24,16 +30,15 @@ public class Spell : MonoBehaviour
 
     public void ApplyPrecastEffect()
     {
-        PrecastEffect = (GameObject)Instantiate(PrecastEffect, (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), new Quaternion());
+        var destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        destination.z = 0;
+        PrecastEffect = (GameObject)Instantiate(PrecastEffect, destination, Quaternion.identity);
         PrecastEffect.transform.SetParent(gameObject.transform);
         PrecastEffect.AddComponent<MouseFollow>();
     }
 
     public void RemovePrecastEffect()
     {
-        if (PrecastEffect == null)
-            return;
         Destroy(PrecastEffect);
-        PrecastEffect = null;
     }
 }

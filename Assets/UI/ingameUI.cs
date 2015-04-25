@@ -14,7 +14,7 @@ public class ingameUI : MonoBehaviour {
 
     public void bnLightingClick()
     {
-        Debug.Log("bnLighting_Clicked");
+        Instantiate(SpellManager.LightningSpell);
     }
 
     public void bnMenuClick()
