@@ -39,10 +39,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddbce085266a1d47a2991e3c3e3fa86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrecastEffect: {fileID: 0}
+  PrecastEffect: {fileID: 116846, guid: c1361e2fd4e30e04f918f95e5f8d11ea, type: 2}
   SpellEffects:
-  - {fileID: 177180, guid: 523b666e53155f04a9f7f5cb9899f7be, type: 2}
-  - {fileID: 171950, guid: bf063a19134d45747bcceb15e3672015, type: 2}
+  - {fileID: 149008, guid: 28abf2fab6bf86c46bd1a2ba9168fac7, type: 2}
+  - {fileID: 169242, guid: 6ef04d4e569a7594480f4ddeac5ebb1e, type: 2}
+  - {fileID: 169372, guid: 68854dc7d82fc604396ee1e52e2d1388, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

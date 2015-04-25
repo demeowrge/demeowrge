@@ -41,6 +41,8 @@ public class Cat : MonoBehaviour
     {
         StopAllCoroutines();
 
+        // TODO: Fix. Dis is HUEVO. Fix.
+
         if (destination.x < 0f)
             destination.x = 0f;
 

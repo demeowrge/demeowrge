@@ -17,7 +17,7 @@ public class Spell : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             foreach (var effect in SpellEffects)
-                Instantiate(effect, gameObject.transform.position, gameObject.transform.rotation);
+                Instantiate(effect, effect.transform.position + gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
         if (Input.GetMouseButtonDown(1))

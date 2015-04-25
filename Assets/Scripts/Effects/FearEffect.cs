@@ -7,6 +7,7 @@ public class FearEffect : AbsCatEffect
 
     protected override void CatEffect(Cat cat)
     {
+        // TODO: Fix. Dis is bugged. Fix.
         cat.Move(
             (cat.transform.position - transform.position) * fearRange.random(),
             cat.SpeedRange.max * 2

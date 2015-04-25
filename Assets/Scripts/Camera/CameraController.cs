@@ -6,26 +6,26 @@ public class CameraController : MonoBehaviour
     public int CameraMoveBoundary;
     public float CameraMoveSpeed;
 
-    protected float ScreenHalfRelWidth;
-    protected float ScreenHalfRelHeight;
+    protected float ScreenHalfWidth;
+    protected float ScreenHalfHeight;
 
     protected bool LockHorizontal = false;
     protected bool LockVertical = false;
 
     void Start()
     {
-        ScreenHalfRelWidth = Camera.main.orthographicSize * Camera.main.aspect;
-        ScreenHalfRelHeight = Camera.main.orthographicSize;
+        ScreenHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+        ScreenHalfHeight = Camera.main.orthographicSize;
 
-        float screenRelWidth = ScreenHalfRelWidth * 2f;
-        float screenRelHeight = ScreenHalfRelHeight * 2f;
+        float screenWidth = ScreenHalfWidth * 2f;
+        float screenHeight = ScreenHalfHeight * 2f;
 
-        if (screenRelHeight >= LevelGenerator.LevelPxWidth)
+        if (screenHeight >= LevelGenerator.LevelPxWidth)
         {
             LockHorizontal = true;
         }
 
-        if (screenRelWidth >= LevelGenerator.LevelPxHeight)
+        if (screenWidth >= LevelGenerator.LevelPxHeight)
         {
             LockVertical = true;
         }
@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.x - step;
 
-            position.x = (destination - ScreenHalfRelWidth > 0f) ? destination : ScreenHalfRelWidth;
+            position.x = (destination - ScreenHalfWidth > 0f) ? destination : ScreenHalfWidth;
         }
 
         if (!LockHorizontal && Input.mousePosition.x > Screen.width - CameraMoveBoundary)
@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.x + step;
 
-            position.x = (destination + ScreenHalfRelWidth < LevelGenerator.LevelPxWidth) ? destination : LevelGenerator.LevelPxWidth - ScreenHalfRelWidth;
+            position.x = (destination + ScreenHalfWidth < LevelGenerator.LevelPxWidth) ? destination : LevelGenerator.LevelPxWidth - ScreenHalfWidth;
         }
 
         if (!LockVertical && Input.mousePosition.y < 0 + CameraMoveBoundary)
@@ -62,7 +62,7 @@ public class CameraController : MonoBehaviour
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.y - step;
 
-            position.y = (destination - ScreenHalfRelHeight > 0f) ? destination : ScreenHalfRelHeight;
+            position.y = (destination - ScreenHalfHeight > 0f) ? destination : ScreenHalfHeight;
         }
 
         if (!LockVertical && Input.mousePosition.y > Screen.height - CameraMoveBoundary)
@@ -70,7 +70,7 @@ public class CameraController : MonoBehaviour
             float step = CameraMoveSpeed * Time.deltaTime;
             float destination = position.y + step;
 
-            position.y = (destination + ScreenHalfRelHeight < LevelGenerator.LevelPxHeight) ? destination : LevelGenerator.LevelPxHeight - ScreenHalfRelHeight;
+            position.y = (destination + ScreenHalfHeight < LevelGenerator.LevelPxHeight) ? destination : LevelGenerator.LevelPxHeight - ScreenHalfHeight;
         }
 
         transform.position = position;
