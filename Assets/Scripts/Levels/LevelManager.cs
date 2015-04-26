@@ -83,6 +83,7 @@ public static class LevelManager
         if (isLoading) return;
         currentLevel = 0;
         currentClip = 0;
+        savedLevel = 1;
         LoadScene(GetClipName(0));
     }
 
