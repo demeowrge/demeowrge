@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slides:
   - {fileID: 1417283147}
-  isLastClip: 1
+  isLastClip: 0
 --- !u!1 &599118838
 GameObject:
   m_ObjectHideFlags: 0
