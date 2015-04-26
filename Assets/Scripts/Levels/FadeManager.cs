@@ -34,10 +34,22 @@ public class FadeManager: MonoBehaviour
         postFade();
     }
 
-    public static void Unfade()
+    public static void Unfade(act postUnfade)
     {
         if (Fading || Unfading) return;
         Unfading = true;
+        var fm = sr.gameObject.GetComponent<FadeManager>();
+        fm.StartCoroutine(fm.WaitForUnfade(postUnfade));
+    }
+
+    public IEnumerator WaitForUnfade(act postUnfade)
+    {
+        while (Unfading)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        postUnfade();
+        Destroy(gameObject);
     }
 
     // Use this for initialization
@@ -60,7 +72,6 @@ public class FadeManager: MonoBehaviour
             {
                 sr.color = new Color(sr.color.a, sr.color.b, sr.color.g, 0f);
                 Unfading = false;
-                Destroy(gameObject);
             }
         }
         if (Fading)

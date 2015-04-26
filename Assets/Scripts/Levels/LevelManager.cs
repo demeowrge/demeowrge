@@ -26,17 +26,23 @@ public static class LevelManager
     }
 
     private static string nameBuffer;
-
+    private static bool isLoading;
     private static void LoadScene(string name)
     {
         nameBuffer = name;
+        isLoading = true;
         FadeManager.Fade(PostFadeLoadScene);
     }
 
     public static void PostFadeLoadScene()
     {
         Application.LoadLevel(nameBuffer);
-        FadeManager.Unfade();
+        FadeManager.Unfade(PostUnfadeLoadScene);
+    }
+
+    public static void PostUnfadeLoadScene()
+    {
+        isLoading = false;
     }
 
     public static void NextLevel()
