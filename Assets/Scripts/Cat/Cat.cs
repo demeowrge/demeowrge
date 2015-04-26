@@ -6,11 +6,43 @@ public class Cat : MonoBehaviour
 {
     public GameObject HatPrefab;
 
+    public bool Blessed;
     public FloatRange IdleRange;
     public FloatRange SpeedRange;
 
-    protected Coroutine currentAction = null;
     protected bool proselytized = false;
+    protected GameObject hat = null;
+    protected Coroutine currentAction = null;
+
+    public GameObject BadCatPrefab;
+
+    public bool Degrading;
+    public FloatRange HatDegradationRange;
+    public FloatRange DegradationRange;
+
+    protected Coroutine degradationAction = null;
+
+    void Start()
+    {
+        if (Blessed)
+        {
+            Proselytize();
+        }
+
+        if (Degrading)
+        {
+            if (proselytized)
+            {
+                StopDegradationAction();
+                HatDegradation();
+            }
+            else
+            {
+                StopDegradationAction();
+                Degradation();
+            }
+        }
+    }
 
     void Update()
     {
@@ -29,9 +61,19 @@ public class Cat : MonoBehaviour
         }
     }
 
+    private void StopCurrentAction()
+    {
+        if (currentAction != null)
+        {
+            StopCoroutine(currentAction);
+            currentAction = null;
+        }
+    }
+
     public void Idle(float time)
     {
-        StopAllCoroutines();
+        StopCurrentAction();
+
         currentAction = StartCoroutine(
             IdleCoroutine(time)
         );
@@ -39,9 +81,7 @@ public class Cat : MonoBehaviour
 
     public void Move(Vector3 destination, float speed)
     {
-        StopAllCoroutines();
-
-        // TODO: Fix. Dis is HUEVO. Fix.
+        StopCurrentAction();
 
         if (destination.x < 0.2f)
             destination.x = 0.2f;
@@ -67,7 +107,7 @@ public class Cat : MonoBehaviour
 
         CatAnimationController animationController = GetComponent<CatAnimationController>();
         animationController.Death();
-        
+
         Destroy(gameObject, 5f);
         Destroy(this);
     }
@@ -76,8 +116,31 @@ public class Cat : MonoBehaviour
     {
         if (!proselytized)
         {
-            GameObject hat = (GameObject) Instantiate(HatPrefab, transform.position, Quaternion.identity);
+            proselytized = true;
+
+            hat = (GameObject)Instantiate(HatPrefab, transform.position, Quaternion.identity);
             hat.transform.parent = transform;
+        }
+
+        if (Degrading)
+        {
+            StopDegradationAction();
+            HatDegradation();
+        }
+    }
+
+    public void DeProselytize()
+    {
+        if (proselytized)
+        {
+            proselytized = false;
+            Destroy(hat);
+
+            if (Degrading)
+            {
+                StopDegradationAction();
+                Degradation();   
+            }
         }
     }
 
@@ -97,5 +160,46 @@ public class Cat : MonoBehaviour
         }
 
         currentAction = null;
+    }
+
+    public void StopDegradationAction()
+    {
+        if (degradationAction != null)
+        {
+            StopCoroutine(degradationAction);
+            degradationAction = null;
+        }
+    }
+
+    public void HatDegradation()
+    {
+        degradationAction = StartCoroutine(
+            HatDegradationCoroutine(HatDegradationRange.random())
+        );
+    }
+
+    private IEnumerator HatDegradationCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        DeProselytize();
+    }
+
+    public void Degradation()
+    {
+        degradationAction = StartCoroutine(
+            DegradationCoroutine(DegradationRange.random())
+        );
+    }
+
+    private IEnumerator DegradationCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Degradate();
+    }
+
+    private void Degradate()
+    {
+        Instantiate(BadCatPrefab, transform.position, Quaternion.identity);
+        Death();
     }
 }

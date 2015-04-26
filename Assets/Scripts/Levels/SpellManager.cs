@@ -15,6 +15,8 @@ public class SpellManager : MonoBehaviour
     public static GameObject LightningSpell;
     public GameObject LightningSpellObject;
 
+    public static GameObject AddCatSpell;
+    public GameObject AddCatSpellObject;
 
     void Start()
     {
@@ -22,5 +24,6 @@ public class SpellManager : MonoBehaviour
         DirectSpell = DirectSpellObject;
         FishSpell = FishSpellObject;
         LightningSpell = LightningSpellObject;
+        AddCatSpell = AddCatSpellObject;
     }
 }

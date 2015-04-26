@@ -51,6 +51,11 @@ public class ingameUI : MonoBehaviour
             Instantiate(SpellManager.LightningSpell);
     }
 
+    public void bnAddCat()
+    {
+        Instantiate(SpellManager.AddCatSpell);
+    }
+
     public void bnMenuClick()
     {
         LevelManager.MainMenu();

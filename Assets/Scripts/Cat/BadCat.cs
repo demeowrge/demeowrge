@@ -29,14 +29,15 @@ public class BadCat : MonoBehaviour
 
     protected IEnumerator ChaseCoroutine(Cat cat)
     {
-        while (cat != null 
-            && worstEffectEver.chased == false 
-            && Vector3.Distance(transform.position, cat.transform.position) > Mathf.Epsilon)
+        while (cat != null &&
+               worstEffectEver.chased == false &&
+               Vector3.Distance(transform.position, cat.transform.position) > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, cat.transform.position, Speed * Time.deltaTime);
             yield return null;
         }
 
         worstEffectEver.chased = false;
+        chaseCollider.enabled = true;
     }
 }
