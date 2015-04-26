@@ -34,7 +34,7 @@ GameObject:
   - 82: {fileID: 8225828}
   - 114: {fileID: 11452736}
   m_Layer: 0
-  m_Name: gameCat
+  m_Name: Cat
   m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

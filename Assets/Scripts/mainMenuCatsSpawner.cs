@@ -1,28 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class mainMenuCatsSpawner : MonoBehaviour {
-	public int catsPauseChance;
-    public float spawnPause;
-    private float timeFromLastSpawn;
+public class MainMenuCatsSpawner : MonoBehaviour
+{
+    public GameObject MenuCatsPrefab;
 
-    public GameObject menuCatsPrefab;
+    public FloatRange SpawnPauseRange;
 
-    void Awake()
+    void Start()
     {
-        timeFromLastSpawn = spawnPause;
+        StartCoroutine(SpawnCoroutine());
     }
 
-	void Update ()
-	{
-        timeFromLastSpawn = timeFromLastSpawn + Time.deltaTime;
-        if (timeFromLastSpawn > spawnPause)
-	    {
-            timeFromLastSpawn = 0;
-            if (Random.Range(0, catsPauseChance) == 0)
-            {
-                Instantiate(menuCatsPrefab, transform.position, transform.rotation);
-            }
-	    } 
-	}
+    protected IEnumerator SpawnCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(SpawnPauseRange.random());
+            Instantiate(MenuCatsPrefab, transform.position, Quaternion.identity);
+        }
+    }
 }
