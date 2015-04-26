@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cameraGradientMaterial : MonoBehaviour
+public class CameraGradientMaterial : MonoBehaviour
 {
 
     public Color topColor = Color.blue;
