@@ -12,10 +12,10 @@ GameObject:
   - 95: {fileID: 9516678}
   - 114: {fileID: 11453514}
   - 114: {fileID: 11403614}
-  - 114: {fileID: 11491420}
   - 114: {fileID: 11477890}
+  - 114: {fileID: 11402624}
   m_Layer: 0
-  m_Name: menuCat
+  m_Name: MenuCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11402624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bfdf2db1416bb4eb1332c9aaa65001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hats:
+  - {fileID: 181334, guid: ea91d2f21e7fb6e4891127b086d18918, type: 2}
+  - {fileID: 118498, guid: 2df369f25117cb74889dbeec33226cb0, type: 2}
+  - {fileID: 162510, guid: d2e64dec15485d14a9f65f492b21e442, type: 2}
+  - {fileID: 120254, guid: 26bd6d1518cc3d74fa409d36f88afac0, type: 2}
+  SpeedRange:
+    min: .75
+    max: 1.25
 --- !u!114 &11403614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,19 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6933c0a8dfedeba49857496e2c986cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 40
---- !u!114 &11491420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499a3cb335e162743a8a4c5f7d9a3ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveVector3: {x: -.00999999978, y: 0, z: 0}
+  lifetime: 120
 --- !u!212 &21243260
 SpriteRenderer:
   m_ObjectHideFlags: 1

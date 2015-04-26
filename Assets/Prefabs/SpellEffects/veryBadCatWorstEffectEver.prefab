@@ -12,7 +12,7 @@ GameObject:
   - 58: {fileID: 5845800}
   - 114: {fileID: 11415884}
   m_Layer: 0
-  m_Name: veryBadCatWorstEffectEver
+  m_Name: VeryBadCatWorstEffectEver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f45e04c7d29294cbbded9941a9b4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chased: 0
   BadCat: {fileID: 195974, guid: 812764400bf608b4488a9bd07da11863, type: 2}
 --- !u!1001 &100100000
 Prefab:

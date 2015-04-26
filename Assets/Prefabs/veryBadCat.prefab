@@ -50,7 +50,7 @@ GameObject:
   - 58: {fileID: 5843416}
   - 114: {fileID: 11429158}
   m_Layer: 0
-  m_Name: veryBadCat
+  m_Name: VeryBadCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
