@@ -13,7 +13,7 @@ public class CatSounds : MonoBehaviour {
 
     public void playBurr()
     {
-        if (burr_1 != null)
+        if (auPlayer != null)
         {
             auPlayer.clip = burr_1;
             auPlayer.Play();

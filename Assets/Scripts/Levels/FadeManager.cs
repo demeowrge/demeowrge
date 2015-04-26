@@ -57,7 +57,7 @@ public class FadeManager: MonoBehaviour
     {
         if (fp != null) return;
         fp = FadePrefab;
-        Destroy(this);
+        //Destroy(this);
     }
 
     // Update is called once per frame

@@ -29,6 +29,7 @@ public static class LevelManager
     private static bool isLoading;
     private static void LoadScene(string name)
     {
+        if (isLoading) return;
         nameBuffer = name;
         isLoading = true;
         FadeManager.Fade(PostFadeLoadScene);
@@ -47,16 +48,19 @@ public static class LevelManager
 
     public static void NextLevel()
     {
+        if (isLoading) return;
         LoadScene(GetLevelName(++currentLevel));
     }
 
     public static void NextClip()
     {
+        if (isLoading) return;
         LoadScene(GetClipName(++currentClip));
     }
 
     public static void RestartLevel()
     {
+        if (isLoading) return;
         LoadScene(GetLevelName(currentLevel));
     }
 
@@ -67,6 +71,7 @@ public static class LevelManager
 
     public static void Load()
     {
+        if (isLoading) return;
         if (!HaveSavedLevel) return;
         currentLevel = savedLevel;
         currentClip = savedLevel-1;
@@ -75,6 +80,7 @@ public static class LevelManager
 
     public static void NewGame()
     {
+        if (isLoading) return;
         currentLevel = 0;
         currentClip = 0;
         LoadScene(GetClipName(0));
@@ -82,6 +88,7 @@ public static class LevelManager
 
     public static void MainMenu()
     {
+        if (isLoading) return;
         currentLevel = 0;
         currentClip = 0;
         LoadScene("MainMenu");
@@ -89,6 +96,7 @@ public static class LevelManager
 
     public static void DefeatClip()
     {
+        if (isLoading) return;
         LoadScene("Defeat Clip");
     }
 

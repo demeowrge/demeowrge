@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mur_1: {fileID: 8300000, guid: d247cc9c9f3a01647945c46ac1dfcb53, type: 3}
   burr_1: {fileID: 8300000, guid: 9a8ea8f5fa1788541a7a0dad09cc6feb, type: 3}
-  silenceChance: 20
+  silenceChance: 30
 --- !u!114 &11477890
 MonoBehaviour:
   m_ObjectHideFlags: 1

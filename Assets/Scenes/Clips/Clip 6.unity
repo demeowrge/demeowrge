@@ -556,9 +556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdcec4e71616f44295259c8b474afaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLastClip: 0
   slides:
   - {fileID: 1417283147}
+  isLastClip: 1
 --- !u!1 &599118838
 GameObject:
   m_ObjectHideFlags: 0

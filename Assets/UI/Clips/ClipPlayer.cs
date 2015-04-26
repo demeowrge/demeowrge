@@ -24,7 +24,7 @@ public class ClipPlayer : MonoBehaviour
 
     void NextSlide()
     {
-        if (isEnded) return;
+        //if (isEnded) return;
 
         SlideNumber++;
 
@@ -33,7 +33,7 @@ public class ClipPlayer : MonoBehaviour
             isEnded = true;
             if (!isLastClip)
             {
-                Debug.Log("Yay!");
+                //Debug.Log("Yay!");
                 LevelManager.NextLevel();
             }
             else
