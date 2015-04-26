@@ -11,7 +11,7 @@ public abstract class AbsCatEffect : AbsEffect
             CatEffect(cat);
             return;
         }
-        if (obj.tag == "BadCat")
+        if ((obj.tag == "BadCat")&&(gameObject.tag == "Kill"))
         {
             Destroy(obj.gameObject.transform.parent.gameObject);
         }
